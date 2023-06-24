@@ -10,6 +10,8 @@ export const runtime = 'edge'
 export async function POST(req: Request) {
   const json = await req.json()
   const { messages, previewToken } = json
+  console.log(messages)
+
   const session = await auth()
 
   if (process.env.VERCEL_ENV !== 'preview') {
