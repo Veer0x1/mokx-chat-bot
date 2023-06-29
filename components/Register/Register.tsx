@@ -10,43 +10,42 @@ import {
   CardHeader,
   CardTitle
 } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue
-} from '@/components/ui/select'
+import Link from 'next/link'
 
-export function DemoPaymentMethod() {
+export function Register() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Payment Method</CardTitle>
+        <CardTitle>
+          Discover the timeless wisdom of Vedas
+          <br />
+          {/*<span className={'text-yellow-400'}>of Vedas</span>*/}
+        </CardTitle>
         <CardDescription>
-          Add a new payment method to your account.
+          Sign up and {/*<span className={'text-yellow-400'}>*/} joruney thorugh
+          ancient knowledge with Arya
+          {/*</span>*/}
         </CardDescription>
       </CardHeader>
       <CardContent className="grid gap-6">
         <RadioGroup defaultValue="card" className="grid grid-cols-3 gap-4">
           <Label
-            htmlFor="card"
-            className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:border-primary"
+            htmlFor="google"
+            className="flex  flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:border-primary"
           >
-            <RadioGroupItem value="card" id="card" className="sr-only" />
-            <CreditCard className="mb-3 h-6 w-6" />
-            Card
+            <RadioGroupItem value="google" id="google" className="sr-only" />
+            <Icons.google className="mb-3 h-6 w-6" />
+            Google
           </Label>
           <Label
-            htmlFor="paypal"
+            htmlFor="facebook"
             className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:border-primary"
           >
             <RadioGroupItem value="paypal" id="paypal" className="sr-only" />
-            <Icons.paypal className="mb-3 h-6 w-6" />
-            Paypal
+            <Icons.facebook className="mb-3 h-6 w-6" />
+            Facebook
           </Label>
           <Label
             htmlFor="apple"
@@ -57,61 +56,29 @@ export function DemoPaymentMethod() {
             Apple
           </Label>
         </RadioGroup>
-        <div className="grid gap-2">
-          <Label htmlFor="name">Name</Label>
-          <Input id="name" placeholder="First Last" />
-        </div>
-        <div className="grid gap-2">
-          <Label htmlFor="number">Card number</Label>
-          <Input id="number" placeholder="" />
-        </div>
-        <div className="grid grid-cols-3 gap-4">
-          <div className="grid gap-2">
-            <Label htmlFor="month">Expires</Label>
-            <Select>
-              <SelectTrigger id="month">
-                <SelectValue placeholder="Month" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="1">January</SelectItem>
-                <SelectItem value="2">February</SelectItem>
-                <SelectItem value="3">March</SelectItem>
-                <SelectItem value="4">April</SelectItem>
-                <SelectItem value="5">May</SelectItem>
-                <SelectItem value="6">June</SelectItem>
-                <SelectItem value="7">July</SelectItem>
-                <SelectItem value="8">August</SelectItem>
-                <SelectItem value="9">September</SelectItem>
-                <SelectItem value="10">October</SelectItem>
-                <SelectItem value="11">November</SelectItem>
-                <SelectItem value="12">December</SelectItem>
-              </SelectContent>
-            </Select>
+        <div className="relative">
+          <div className="absolute inset-0 flex items-center">
+            <span className="w-full border-t" />
           </div>
-          <div className="grid gap-2">
-            <Label htmlFor="year">Year</Label>
-            <Select>
-              <SelectTrigger id="year">
-                <SelectValue placeholder="Year" />
-              </SelectTrigger>
-              <SelectContent>
-                {Array.from({ length: 10 }, (_, i) => (
-                  <SelectItem key={i} value={`${new Date().getFullYear() + i}`}>
-                    {new Date().getFullYear() + i}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-          <div className="grid gap-2">
-            <Label htmlFor="cvc">CVC</Label>
-            <Input id="cvc" placeholder="CVC" />
+          <div className="relative flex justify-center text-xs uppercase">
+            <span className="bg-background px-2 text-muted-foreground">
+              Or continue with
+            </span>
           </div>
         </div>
       </CardContent>
       <CardFooter>
-        <Button className="w-full">Continue</Button>
+        <Button className="w-full">Signup With Email</Button>
       </CardFooter>
+      <p className="px-8 text-center text-sm text-muted-foreground m-4 mb-8">
+        Existing account?{' '}
+        <Link
+          href="/terms"
+          className="underline underline-offset-4 hover:text-primary"
+        >
+          Login
+        </Link>{' '}
+      </p>
     </Card>
   )
 }
