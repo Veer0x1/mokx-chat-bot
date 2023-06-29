@@ -70,10 +70,10 @@ export function Register() {
       <CardFooter>
         <Button className="w-full">Signup With Email</Button>
       </CardFooter>
-      <p className="px-8 text-center text-sm text-muted-foreground m-4 mb-8">
+      <p className="m-4 mb-8 px-8 text-center text-sm text-muted-foreground">
         Existing account?{' '}
         <Link
-          href="/terms"
+          href="/register/login"
           className="underline underline-offset-4 hover:text-primary"
         >
           Login
