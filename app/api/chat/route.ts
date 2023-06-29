@@ -11,58 +11,65 @@ export async function POST(req: Request) {
   const json = await req.json()
   const { messages, previewToken } = json
   console.log(messages)
+  const response = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+    .then(response => response.json())
+    .then(json => {
+      console.log(json)
+      return json
+    })
 
-  const session = await auth()
+  console.log('response', response)
+  // const session = await auth()
+  //
+  // if (process.env.VERCEL_ENV !== 'preview') {
+  //   if (session == null) {
+  //     return new Response('Unauthorized', { status: 401 })
+  //   }
+  // }
+  //
+  // const configuration = new Configuration({
+  //   apiKey: previewToken || process.env.OPENAI_API_KEY
+  // })
+  //
+  // const openai = new OpenAIApi(configuration)
+  //
+  // const res = await openai.createChatCompletion({
+  //   model: 'gpt-3.5-turbo',
+  //   messages,
+  //   temperature: 0.7,
+  //   stream: true
+  // })
+  //
+  // const stream = OpenAIStream(res, {
+  //   async onCompletion(completion) {
+  //     const title = json.messages[0].content.substring(0, 100)
+  //     const userId = session?.user.id
+  //     if (userId) {
+  //       const id = json.id ?? nanoid()
+  //       const createdAt = Date.now()
+  //       const path = `/chat/${id}`
+  //       const payload = {
+  //         id,
+  //         title,
+  //         userId,
+  //         createdAt,
+  //         path,
+  //         messages: [
+  //           ...messages,
+  //           {
+  //             content: completion,
+  //             role: 'assistant'
+  //           }
+  //         ]
+  //       }
+  //       await kv.hmset(`chat:${id}`, payload)
+  //       await kv.zadd(`user:chat:${userId}`, {
+  //         score: createdAt,
+  //         member: `chat:${id}`
+  //       })
+  //     }
+  //   }
+  // })
 
-  if (process.env.VERCEL_ENV !== 'preview') {
-    if (session == null) {
-      return new Response('Unauthorized', { status: 401 })
-    }
-  }
-
-  const configuration = new Configuration({
-    apiKey: previewToken || process.env.OPENAI_API_KEY
-  })
-
-  const openai = new OpenAIApi(configuration)
-
-  const res = await openai.createChatCompletion({
-    model: 'gpt-3.5-turbo',
-    messages,
-    temperature: 0.7,
-    stream: true
-  })
-
-  const stream = OpenAIStream(res, {
-    async onCompletion(completion) {
-      const title = json.messages[0].content.substring(0, 100)
-      const userId = session?.user.id
-      if (userId) {
-        const id = json.id ?? nanoid()
-        const createdAt = Date.now()
-        const path = `/chat/${id}`
-        const payload = {
-          id,
-          title,
-          userId,
-          createdAt,
-          path,
-          messages: [
-            ...messages,
-            {
-              content: completion,
-              role: 'assistant'
-            }
-          ]
-        }
-        await kv.hmset(`chat:${id}`, payload)
-        await kv.zadd(`user:chat:${userId}`, {
-          score: createdAt,
-          member: `chat:${id}`
-        })
-      }
-    }
-  })
-
-  return new StreamingTextResponse(stream)
+  return new StreamingTextResponse(response.title)
 }
