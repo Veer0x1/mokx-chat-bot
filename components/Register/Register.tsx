@@ -1,5 +1,4 @@
-import { CreditCard } from 'lucide-react'
-
+'use client'
 import { Icons } from '@/components/icons'
 import { Button } from '@/components/ui/button'
 import {
@@ -13,6 +12,7 @@ import {
 import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import Link from 'next/link'
+import { signIn } from 'next-auth/react'
 
 export function Register() {
   return (
@@ -33,6 +33,9 @@ export function Register() {
         <RadioGroup defaultValue="card" className="grid grid-cols-3 gap-4">
           <Label
             htmlFor="google"
+            onClick={() => {
+              signIn('google', { callbackUrl: '/' })
+            }}
             className="flex  flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:border-primary"
           >
             <RadioGroupItem value="google" id="google" className="sr-only" />
