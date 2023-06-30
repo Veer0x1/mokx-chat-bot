@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 import { auth } from '@/auth'
 import { clearChats } from '@/app/actions'
@@ -11,6 +12,7 @@ import { ThemeToggle } from '@/components/theme-toggle'
 import { ClearHistory } from '@/components/clear-history'
 import { UserMenu } from '@/components/user-menu'
 import { LoginButton } from '@/components/login-button'
+import logo from '@/public/MOkx logo 2.png'
 
 export async function Header() {
   const session = await auth()
@@ -30,22 +32,26 @@ export async function Header() {
           </Sidebar>
         ) : (
           <Link href="/" target="_blank" rel="nofollow">
-            <IconNextChat className="mr-2 h-6 w-6 dark:hidden" inverted />
-            <IconNextChat className="mr-2 hidden h-6 w-6 dark:block" />
+            {/*<IconNextChat className="mr-2 h-6 w-6 dark:hidden" inverted />*/}
+            {/*<IconNextChat className="mr-2 hidden h-6 w-6 dark:block" />*/}
+            <Image src={logo} alt="MOkx logo" width={60} height={60} />
           </Link>
         )}
         <div className="flex items-center">
-          <IconSeparator className="h-6 w-6 text-muted-foreground/50" />
-          {session?.user ? (
-            <UserMenu user={session.user} />
-          ) : (
-            <LoginButton
-              variant="link"
-              showGithubIcon={true}
-              text="Login"
-              className="-ml-2"
-            />
-          )}
+          {/*<IconSeparator className="h-6 w-6 text-muted-foreground/50" />*/}
+          {
+            session?.user ? (
+              <UserMenu user={session.user} />
+            ) : // (
+            // <LoginButton
+            //   variant="link"
+            //   showGithubIcon={true}
+            //   text="Login"
+            //   className="-ml-2"
+            // />
+            null
+            // )
+          }
         </div>
       </div>
       <div className="flex items-center justify-end space-x-2">
