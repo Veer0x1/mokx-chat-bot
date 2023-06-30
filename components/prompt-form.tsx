@@ -70,6 +70,9 @@ export function PromptForm({
           value={input}
           onChange={e => setInput(e.target.value)}
           placeholder="Send a message."
+          data-gramm="false"
+          data-gramm_editor="false"
+          data-enable-grammarly="false"
           spellCheck={false}
           className="min-h-[60px] w-full resize-none bg-transparent px-4 py-[1.3rem] focus-within:outline-none sm:text-sm"
         />
