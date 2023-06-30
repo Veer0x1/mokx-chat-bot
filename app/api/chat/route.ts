@@ -10,6 +10,7 @@ export const runtime = 'edge'
 export async function POST(req: Request) {
   const json = await req.json()
   const { messages, previewToken } = json
+  const userId = (await auth())?.user.id
   console.log(messages)
 
   // Get the last message object and its content value
@@ -30,6 +31,35 @@ export async function POST(req: Request) {
       console.log(json)
       return json
     })
+
+  // const stream = OpenAIStream(response, {
+  //   async onCompletion(completion) {
+  //     const title = json.messages[0].content.substring(0, 100)
+  //     const id = json.id ?? nanoid()
+  //     const createdAt = Date.now()
+  //     const path = `/chat/${id}`
+  //     console.log('id', id)
+  //     const payload = {
+  //       id,
+  //       title,
+  //       userId,
+  //       createdAt,
+  //       path,
+  //       messages: [
+  //         ...messages,
+  //         {
+  //           content: completion,
+  //           role: 'assistant'
+  //         }
+  //       ]
+  //     }
+  //     await kv.hmset(`chat:${id}`, payload)
+  //     await kv.zadd(`user:chat:${userId}`, {
+  //       score: createdAt,
+  //       member: `chat:${id}`
+  //     })
+  //   }
+  // })
 
   console.log('response', response)
 
