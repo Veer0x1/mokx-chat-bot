@@ -48,7 +48,7 @@ export async function Header() {
           ) : (
             <LoginButton
               variant="link"
-              showGithubIcon={false}
+              showGithubIcon={true}
               text="Login"
               className="-ml-2"
             />

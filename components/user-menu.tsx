@@ -31,9 +31,11 @@ export function UserMenu({ user }: UserMenuProps) {
           <Button variant="ghost" className="pl-0">
             {user?.image ? (
               <Image
-                className="w-6 h-6 transition-opacity duration-300 rounded-full select-none ring-1 ring-zinc-100/10 hover:opacity-80"
-                src={user?.image ? `${user.image}&s=60` : ''}
+                className="h-6 w-6 select-none rounded-full ring-1 ring-zinc-100/10 transition-opacity duration-300 hover:opacity-80"
+                src={user?.image ? `${user.image}` : ''}
                 alt={user.name ?? 'Avatar'}
+                width={24}
+                height={24}
               />
             ) : (
               <div className="flex items-center justify-center text-xs font-medium uppercase rounded-full select-none h-7 w-7 shrink-0 bg-muted/50 text-muted-foreground">
