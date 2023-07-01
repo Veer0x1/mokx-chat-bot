@@ -5,9 +5,10 @@ import { Configuration, OpenAIApi } from 'openai-edge'
 import { auth } from '@/auth'
 import { nanoid } from '@/lib/utils'
 
-export const runtime = 'edge'
+// export const runtime = 'edge'
 
 export async function POST(req: Request) {
+  console.log('Im runnig this function on the edge')
   const json = await req.json()
   const { messages, previewToken } = json
   const userId = (await auth())?.user.id
