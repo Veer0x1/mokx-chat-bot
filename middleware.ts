@@ -15,6 +15,6 @@ export function isAuthorized(req: NextRequest) {
     }
 }
 
-// export const config = {
-//     matcher: '/api/:path*',
-// }
+export const config = {
+    matcher: '/:path*',
+}
