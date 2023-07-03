@@ -13,6 +13,7 @@ import { ClearHistory } from '@/components/clear-history'
 import { UserMenu } from '@/components/user-menu'
 import { LoginButton } from '@/components/login-button'
 import logo from '@/public/MOkx logo 2.png'
+import { Button } from '@/components/ui/button'
 
 export async function Header() {
   const session = await auth()
@@ -38,20 +39,22 @@ export async function Header() {
           </Link>
         )}
         <div className="flex items-center">
-          {/*<IconSeparator className="h-6 w-6 text-muted-foreground/50" />*/}
-          {
-            session?.user ? (
-              <UserMenu user={session.user} />
-            ) : // (
+          <IconSeparator className="h-6 w-6 text-muted-foreground/50" />
+          {session?.user ? (
+            <UserMenu user={session.user} />
+          ) : (
             // <LoginButton
             //   variant="link"
             //   showGithubIcon={true}
             //   text="Login"
             //   className="-ml-2"
             // />
-            null
-            // )
-          }
+            <Link href={'/register'}>
+              <Button variant="outline" className="ml-2">
+                LogIn
+              </Button>
+            </Link>
+          )}
         </div>
       </div>
       <div className="flex items-center justify-end space-x-2">

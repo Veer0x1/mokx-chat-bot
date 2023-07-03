@@ -1,4 +1,5 @@
 import { redirect } from 'next/navigation'
+import { NextResponse } from 'next/server'
 export { auth as middleware } from './auth'
 import type { NextRequest } from 'next/server'
 
@@ -7,7 +8,7 @@ import type { NextRequest } from 'next/server'
 // export function middleware(req: NextRequest) {
 //   const cookies = req.cookies.get('next-auth.session-token')
 //   if (cookies === undefined) {
-//     redirect('/register')
+//     return NextResponse.rewrite(new URL('/register', req.url))
 //   }
 // }
 
