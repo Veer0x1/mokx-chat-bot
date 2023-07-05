@@ -21,7 +21,7 @@ const exampleMessages = [
 export function EmptyScreen({ setInput }: Pick<UseChatHelpers, 'setInput'>) {
   return (
     <div className="mx-auto max-w-2xl px-4 ">
-      <div className="rounded-lg border bg-background p-8">
+      <div className="p-8">
         <div className={"flex justify-center align-middle"}>
           <div className="text-center">
             <h1 className="mb-2 text-lg font-semibold text-[#69235B]">
