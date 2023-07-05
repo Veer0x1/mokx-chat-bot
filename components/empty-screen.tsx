@@ -35,15 +35,15 @@ export function EmptyScreen({ setInput }: Pick<UseChatHelpers, 'setInput'>) {
         <div className="mt-4 flex items-start justify-center space-y-2">
           <div className={'text-center'}>
           {exampleMessages.map((message, index) => (
-            <Button
-              key={index}
-              variant="link"
-              className="m-2 rounded-full bg-[#FBBC04] p-4 text-base text-[#69235B]"
-              onClick={() => setInput(message.message)}
-            >
+              <Button
+                  key={index}
+                  variant="secondary"
+                  className="m-2 truncate rounded-full bg-[#FBBC04] p-4 text-base font-light text-[#69235B]"
+                  onClick={() => setInput(message.message)}
+              >
+                {message.heading}
+              </Button>
 
-              {message.heading}
-            </Button>
           ))}
           </div>
 
