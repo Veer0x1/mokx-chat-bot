@@ -6,12 +6,10 @@ import { auth } from '@/auth'
 import { clearChats } from '@/app/actions'
 import { Sidebar } from '@/components/sidebar'
 import { SidebarList } from '@/components/sidebar-list'
-import { IconNextChat, IconSeparator } from '@/components/ui/icons'
 import { SidebarFooter } from '@/components/sidebar-footer'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { ClearHistory } from '@/components/clear-history'
 import { UserMenu } from '@/components/user-menu'
-import { LoginButton } from '@/components/login-button'
 import logo from '@/public/MOkx logo 2.png'
 import { Button } from '@/components/ui/button'
 
@@ -39,26 +37,25 @@ export async function Header() {
           </Link>
         )}
         <div className="flex items-center">
-          <IconSeparator className="h-6 w-6 text-muted-foreground/50" />
-          {session?.user ? (
-            <UserMenu user={session.user} />
-          ) : (
-            // <LoginButton
-            //   variant="link"
-            //   showGithubIcon={true}
-            //   text="Login"
-            //   className="-ml-2"
-            // />
-            <Link href={'/register'}>
-              <Button variant="outline" className="ml-2">
-                LogIn
-              </Button>
-            </Link>
-          )}
+
         </div>
       </div>
       <div className="flex items-center justify-end space-x-2">
-        <ThemeToggle />
+          {session?.user ? (
+              <UserMenu user={session.user} />
+          ) : (
+              // <LoginButton
+              //   variant="link"
+              //   showGithubIcon={true}
+              //   text="Login"
+              //   className="-ml-2"
+              // />
+              <Link href={'/register'}>
+                  <Button variant="outline" className="ml-2">
+                      LogIn
+                  </Button>
+              </Link>
+          )}
       </div>
     </header>
   )
