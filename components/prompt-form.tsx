@@ -11,7 +11,7 @@ import {
   TooltipContent,
   TooltipTrigger
 } from '@/components/ui/tooltip'
-import { IconArrowElbow, IconPlus, } from '@/components/ui/icons'
+import { IconPlus, } from '@/components/ui/icons'
 import { Icons }  from '@/components/icons'
 
 export interface PromptProps
