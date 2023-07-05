@@ -37,6 +37,10 @@
   }
  
   .dark {
+
+    --theme-purple:#69235B;
+    --theme-yellow:#FBBC04;
+
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
  

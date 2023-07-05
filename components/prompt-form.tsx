@@ -47,7 +47,7 @@ export function PromptForm({
       }}
       ref={formRef}
     >
-      <div className="relative flex w-full grow flex-col overflow-hidden bg-background px-8 sm:rounded-md sm:border sm:px-12">
+      <div className="relative flex w-full grow flex-col overflow-hidden bg-background px-8 shadow-lg sm:rounded-full sm:border sm:px-12">
         <Tooltip>
           <TooltipTrigger asChild>
             <Link
@@ -58,7 +58,7 @@ export function PromptForm({
               )}
               target="_blank"
             >
-              <IconPlus />
+              <IconPlus className={"text-[#69235B]"} />
               <span className="sr-only">New Chat</span>
             </Link>
           </TooltipTrigger>
@@ -85,6 +85,7 @@ export function PromptForm({
                 type="submit"
                 size="icon"
                 disabled={isLoading || input === ''}
+                className={'bg-[#69235B]'}
               >
                 <Icons.send className={'h-4 w-4'} />
                 <span className="sr-only">Send message</span>
