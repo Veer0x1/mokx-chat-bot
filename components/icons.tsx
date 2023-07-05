@@ -24,6 +24,7 @@ import {
   Trash,
   Twitter,
   User,
+    LogOut,
   X,
   type Icon as LucideIcon
 } from 'lucide-react'
@@ -88,6 +89,7 @@ export const Icons = {
   spinner: Loader2,
   chevronLeft: ChevronLeft,
   chevronRight: ChevronRight,
+    logOut: LogOut,
   trash: Trash,
   post: FileText,
   page: File,
