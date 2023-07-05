@@ -4,6 +4,7 @@ import {
   ArrowRight,
   Check,
     Send,
+    AlertTriangleIcon,
   ChevronLeft,
   ChevronRight,
   ClipboardCheck,
@@ -86,6 +87,7 @@ export const Icons = {
     </svg>
   ),
   close: X,
+    alert: AlertTriangleIcon,
   facebook: Facebook,
   spinner: Loader2,
   chevronLeft: ChevronLeft,

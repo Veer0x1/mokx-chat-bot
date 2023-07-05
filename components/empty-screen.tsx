@@ -1,8 +1,7 @@
 import { UseChatHelpers } from 'ai/react'
 
 import { Button } from '@/components/ui/button'
-import { ExternalLink } from '@/components/external-link'
-import { IconArrowRight } from '@/components/ui/icons'
+import { Icons } from '@/components/icons'
 
 const exampleMessages = [
   {
@@ -21,28 +20,41 @@ const exampleMessages = [
 
 export function EmptyScreen({ setInput }: Pick<UseChatHelpers, 'setInput'>) {
   return (
-    <div className="mx-auto max-w-2xl px-4">
+    <div className="mx-auto max-w-2xl px-4 ">
       <div className="rounded-lg border bg-background p-8">
-        <h1 className="mb-2 text-lg font-semibold">
-          Welcome to Mokx AI Chatbot!
-        </h1>
-
-        <p className="leading-normal text-muted-foreground">
-          You can ask queries like:
-        </p>
-        <div className="mt-4 flex flex-col items-start space-y-2">
+        <div className={"flex justify-center align-middle"}>
+          <div className="text-center">
+            <h1 className="mb-2 text-lg font-semibold text-[#69235B]">
+              Welcome to Mokx AI Chatbot!
+            </h1>
+            <p className="leading-normal text-[#69235B]">
+              You can ask queries like:
+            </p>
+          </div>
+        </div>
+        <div className="mt-4 flex items-start justify-center space-y-2">
+          <div className={'text-center'}>
           {exampleMessages.map((message, index) => (
             <Button
               key={index}
               variant="link"
-              className="h-auto p-0 text-base"
+              className="m-2 rounded-full bg-[#FBBC04] p-4 text-base text-[#69235B]"
               onClick={() => setInput(message.message)}
             >
-              <IconArrowRight className="mr-2 text-muted-foreground" />
+
               {message.heading}
             </Button>
           ))}
+          </div>
+
         </div>
+        <div className={'mt-6 flex items-center justify-center text-center'}>
+          <Icons.alert className={'mr-2 h-4 w-4 text-[#69235B]'} />
+          <p className="leading-normal text-[#69235B]">
+            Limitation: May struggle with complex queries.
+          </p>
+        </div>
+
       </div>
     </div>
   )

@@ -11,8 +11,8 @@ import { Header } from '@/components/header'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Next.js AI Chatbot',
-    template: `%s - Next.js AI Chatbot`
+    default: 'Arya AI Chatbot',
+    template: `%s - Arya AI Chatbot`
   },
   description: 'An AI-powered chatbot template built with Next.js and Vercel.',
   themeColor: [
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
     { media: '(prefers-color-scheme: dark)', color: 'black' }
   ],
   icons: {
-    icon: '/favicon.ico',
+    icon: '/arya.ico',
     shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png'
+    apple: '/Mok'
   }
 }
 
