@@ -15,7 +15,7 @@ const page: FunctionComponent<Props> = props => {
       <div className="flex-1">
         <main>
           <div className="flex min-h-screen flex-col items-center justify-center py-2">
-            <div className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
+            <div className="flex w-full flex-1 flex-col items-center justify-center text-center sm:px-20">
               <Register />
             </div>
           </div>

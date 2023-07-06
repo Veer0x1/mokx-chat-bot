@@ -19,14 +19,14 @@ import { signIn } from 'next-auth/react'
 export function Register() {
   return (
     <Card className={'bg-[#69235B]'}>
-      <CardHeader className={'items-start text-start text-5xl text-white'}>
+      <CardHeader className={'items-start text-start text-white sm:text-5xl'}>
         <CardTitle className={'leading-tight'}>
           Discover the <br /> timeless wisdom the
           <br />
           <span className={'text-[#FBBC04]'}>of Vedas</span>
         </CardTitle>
 
-        <CardDescription className={'text-xl text-white'}>
+        <CardDescription className={'text-white sm:text-xl'}>
           Sign up and{' '}
           <span className={'text-[#FBBC04]'}>
             {' '}
@@ -35,14 +35,14 @@ export function Register() {
         </CardDescription>
       </CardHeader>
       <CardContent className="grid gap-6">
-        <RadioGroup defaultValue="card" className="mx-4 grid grid-cols-3 items-center justify-center">
+        <RadioGroup defaultValue="card" className="grid grid-cols-3 items-center justify-center sm:mx-4">
           <div className="flex flex-col items-center justify-center">
           <Label
               htmlFor="google"
               onClick={() => {
                 signIn('google', { callbackUrl: '/' })
               }}
-              className="flex h-16 w-16 flex-col items-center justify-center rounded-full border-2 border-muted bg-[#69235B] p-4 text-center transition-all duration-300 hover:border-primary"
+              className="flex h-12 w-12 flex-col items-center justify-center rounded-full border-2 border-muted bg-[#69235B] sm:p-4 text-center transition-all duration-300 hover:border-primary sm:h-16 sm:w-16"
           >
             <RadioGroupItem value="google" id="google" className="sr-only" />
             <Icons.google className="h-6 w-6" />
@@ -51,7 +51,7 @@ export function Register() {
           <div className="flex flex-col items-center justify-center">
           <Label
               htmlFor="facebook"
-              className="flex h-16 w-16 flex-col items-center justify-center rounded-full border-2 border-muted bg-[#69235B] p-4 text-center transition-all duration-300 hover:border-primary"
+              className="flex h-12 w-12 flex-col items-center justify-center rounded-full border-2 border-muted bg-[#69235B] p-2 sm:p-4 text-center transition-all duration-300 hover:border-primary sm:h-16 sm:w-16"
           >
             <RadioGroupItem value="facebook" id="facebook" className="sr-only" />
             {/*<Icons.facebook className="mb-3 h-6 w-6 text-white" />*/}
@@ -61,7 +61,7 @@ export function Register() {
           <div className="flex flex-col items-center justify-center">
           <Label
               htmlFor="apple"
-              className="flex h-16 w-16 flex-col items-center justify-center rounded-full border-2 border-muted bg-[#69235B] p-4 text-center transition-all duration-300 hover:border-primary"
+              className="flex h-12 w-12 flex-col items-center justify-center rounded-full border-2 border-muted bg-[#69235B] p-2 sm:p-4 text-center transition-all duration-300 hover:border-primary sm:h-16 sm:w-16"
           >
             <RadioGroupItem value="apple" id="apple" className="sr-only" />
             <Icons.apple className="h-8 w-8 text-white" />
@@ -86,7 +86,7 @@ export function Register() {
           Signup With Email
         </Button>
       </CardFooter>
-      <p className="m-4 mb-8 px-8 text-center text-lg text-white">
+      <p className="m-4 mb-8 px-8 text-center text-white sm:text-lg">
         Existing account?{' '}
         <Link
           href="/register/login"
