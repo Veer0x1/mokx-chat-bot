@@ -47,14 +47,14 @@ export function PromptForm({
       }}
       ref={formRef}
     >
-      <div className="relative flex w-full grow flex-col overflow-hidden bg-background px-8 shadow-lg sm:rounded-full sm:border sm:px-12">
+      <div className="relative flex w-full grow flex-col overflow-hidden bg-background px-8 shadow-lg rounded-full sm:px-12">
         <Tooltip>
           <TooltipTrigger asChild>
             <Link
               href="/"
               className={cn(
                 buttonVariants({ size: 'sm', variant: 'outline' }),
-                'absolute left-0 top-4 h-8 w-8 rounded-full bg-background p-0 sm:left-4'
+                'absolute left-5 top-4 h-8 w-8 rounded-full bg-background p-0 sm:left-4'
               )}
               target="_blank"
             >
@@ -76,9 +76,9 @@ export function PromptForm({
           data-gramm_editor="false"
           data-enable-grammarly="false"
           spellCheck={false}
-          className="min-h-[60px] w-full resize-none bg-transparent px-4 py-[1.3rem] focus-within:outline-none sm:text-sm"
+          className="min-h-[60px] w-full ml-8 sm:ml-auto resize-none bg-transparent px-4 py-[1.3rem] focus-within:outline-none sm:text-sm"
         />
-        <div className="absolute right-0 top-4 sm:right-4">
+        <div className="absolute right-5 top-4 sm:right-4">
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
