@@ -40,7 +40,7 @@ export function ChatPanel({
             <Button
               variant="outline"
               onClick={() => stop()}
-              className="bg-background"
+              className="bg-background text-[#69235B]"
             >
               <IconStop className="mr-2" />
               Stop generating
@@ -50,7 +50,7 @@ export function ChatPanel({
               <Button
                 variant="outline"
                 onClick={() => reload()}
-                className="bg-background"
+                className="bg-background text-[#69235B]"
               >
                 <IconRefresh className="mr-2" />
                 Regenerate response

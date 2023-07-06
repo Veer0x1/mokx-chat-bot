@@ -28,7 +28,8 @@ export function ChatMessage({ message, ...props }: ChatMessageProps) {
         )}
       >
         {message.role === 'user' ? (
-          <IconUser />
+          <IconUser className={'text-[#69235B]'} />
+
         ) : (
           <Image
             src={
@@ -42,7 +43,7 @@ export function ChatMessage({ message, ...props }: ChatMessageProps) {
       </div>
       <div className="ml-4 flex-1 space-y-2 overflow-hidden px-1">
         <MemoizedReactMarkdown
-          className="prose dark:prose-invert prose-p:leading-relaxed prose-pre:p-0 break-words"
+          className="prose dark:prose-invert prose-p:leading-relaxed prose-pre:p-0 break-words text-[#69235B]"
           remarkPlugins={[remarkGfm, remarkMath]}
           components={{
             p({ children }) {
@@ -69,14 +70,14 @@ export function ChatMessage({ message, ...props }: ChatMessageProps) {
                 )
               }
 
-              return (
-                <CodeBlock
-                  key={Math.random()}
-                  language={(match && match[1]) || ''}
-                  value={String(children).replace(/\n$/, '')}
-                  {...props}
-                />
-              )
+              // return (
+              //   <CodeBlock
+              //     key={Math.random()}
+              //     language={(match && match[1]) || ''}
+              //     value={String(children).replace(/\n$/, '')}
+              //     {...props}
+              //   />
+              // )
             }
           }}
         >
