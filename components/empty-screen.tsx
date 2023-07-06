@@ -20,7 +20,7 @@ const exampleMessages = [
 
 export function EmptyScreen({ setInput }: Pick<UseChatHelpers, 'setInput'>) {
   return (
-    <div className="mx-auto max-w-2xl px-4 ">
+    <div className="mx-auto max-w-2xl">
       <div className="p-8">
         <div className={"flex justify-center align-middle"}>
           <div className="text-center">
@@ -35,14 +35,15 @@ export function EmptyScreen({ setInput }: Pick<UseChatHelpers, 'setInput'>) {
         <div className="mt-4 flex items-start justify-center space-y-2">
           <div className={'text-center'}>
           {exampleMessages.map((message, index) => (
+              <div key={index} className={''}>
               <Button
-                  key={index}
                   variant="secondary"
-                  className="m-2 truncate rounded-full bg-[#FBBC04] p-4 text-base font-light text-[#69235B]"
+                  className="m-2 h-16 rounded-full bg-[#FBBC04] p-4 text-base font-light text-[#69235B] sm:h-4"
                   onClick={() => setInput(message.message)}
               >
-                {message.heading}
+                <span className={'p-4'}>{message.heading}</span>
               </Button>
+              </div>
 
           ))}
           </div>
