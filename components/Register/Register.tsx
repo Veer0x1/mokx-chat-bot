@@ -30,7 +30,7 @@ export function Register() {
           Sign up and{' '}
           <span className={'text-[#FBBC04]'}>
             {' '}
-            joruney thorugh ancient <br /> knowledge with Arya 🌟
+            journey through ancient <br /> knowledge with Arya 🌟
           </span>
         </CardDescription>
       </CardHeader>
@@ -42,7 +42,7 @@ export function Register() {
               onClick={() => {
                 signIn('google', { callbackUrl: '/' })
               }}
-              className="flex h-12 w-12 flex-col items-center justify-center rounded-full border-2 border-muted bg-[#69235B] sm:p-4 text-center transition-all duration-300 hover:border-primary sm:h-16 sm:w-16"
+              className="flex h-12 w-12 flex-col items-center justify-center rounded-full border-2 border-muted bg-[#69235B] text-center transition-all duration-300 hover:border-primary sm:h-16 sm:w-16 sm:p-4"
           >
             <RadioGroupItem value="google" id="google" className="sr-only" />
             <Icons.google className="h-6 w-6" />
@@ -51,7 +51,7 @@ export function Register() {
           <div className="flex flex-col items-center justify-center">
           <Label
               htmlFor="facebook"
-              className="flex h-12 w-12 flex-col items-center justify-center rounded-full border-2 border-muted bg-[#69235B] p-2 sm:p-4 text-center transition-all duration-300 hover:border-primary sm:h-16 sm:w-16"
+              className="flex h-12 w-12 flex-col items-center justify-center rounded-full border-2 border-muted bg-[#69235B] p-2 text-center transition-all duration-300 hover:border-primary sm:h-16 sm:w-16 sm:p-4"
           >
             <RadioGroupItem value="facebook" id="facebook" className="sr-only" />
             {/*<Icons.facebook className="mb-3 h-6 w-6 text-white" />*/}
@@ -61,7 +61,7 @@ export function Register() {
           <div className="flex flex-col items-center justify-center">
           <Label
               htmlFor="apple"
-              className="flex h-12 w-12 flex-col items-center justify-center rounded-full border-2 border-muted bg-[#69235B] p-2 sm:p-4 text-center transition-all duration-300 hover:border-primary sm:h-16 sm:w-16"
+              className="flex h-12 w-12 flex-col items-center justify-center rounded-full border-2 border-muted bg-[#69235B] p-2 text-center transition-all duration-300 hover:border-primary sm:h-16 sm:w-16 sm:p-4"
           >
             <RadioGroupItem value="apple" id="apple" className="sr-only" />
             <Icons.apple className="h-8 w-8 text-white" />
@@ -89,7 +89,7 @@ export function Register() {
       <p className="m-4 mb-8 px-8 text-center text-white sm:text-lg">
         Existing account?{' '}
         <Link
-          href="/register/login"
+          href={"/register/login"}
           className="text-[#FBBC04] underline underline-offset-4 hover:text-white"
         >
           Log in
